@@ -71,16 +71,16 @@
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js",
-    "lint": "eslint ./src/*"
+    "prepare": "husky install",
+    "lint": "eslint ./src/*",
+    "lint-staged": "lint-staged",
+    "commitlint": "commitlint --config commitlint.config.js -e -V",
+    "commit": "git-cz"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged",
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-conventional-changelog"
     }
-  },
-  "lint-staged": {
-    "eslint --fix --ext .js,.tsx,.jsx,.ts ./src": "eslint"
   },
   "eslintConfig": {
     "extends": [
@@ -101,15 +101,17 @@
     ]
   },
   "devDependencies": {
-    "@commitlint/cli": "^17.0.0",
-    "@commitlint/config-conventional": "^17.0.0",
+    "@commitlint/cli": "^17.1.2",
+    "@commitlint/config-conventional": "^17.1.0",
     "@types/lodash": "^4.14.185",
     "@typescript-eslint/eslint-plugin": "^5.25.0",
     "@typescript-eslint/parser": "^5.25.0",
+    "commitizen": "^4.2.5",
+    "cz-conventional-changelog": "^3.3.0",
     "eslint": "^8.15.0",
     "eslint-plugin-react": "^7.29.4",
     "husky": "^8.0.1",
-    "lint-staged": "^12.4.1",
+    "lint-staged": "^12.5.0",
     "prettier": "^2.6.2"
   },
   "jest": {
