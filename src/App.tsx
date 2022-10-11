@@ -8,7 +8,7 @@ import { getSearchParams } from "./utils/common";
 function App() {
   const { source } = getSearchParams();
   return (
-    <div className="App">
+    <div className="app">
       <BrowserRouter>
         {source != "ops2" && (
           <ul className="nav-ul">

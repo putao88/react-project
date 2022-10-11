@@ -3,6 +3,9 @@
     "prettier --write .",
     "eslint  --fix"
   ],
+  "src/**/*.{css}": [
+    "stylelint"
+  ],
   "*.md": [
     "prettier --write"
   ]
